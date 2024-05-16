@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb0x36i4o1fh2"]
+
+[ext_resource type="Texture2D" uid="uid://cq3f4pw4a4d0x" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_wc0rv"]
+[ext_resource type="PackedScene" uid="uid://d7uvuu1fhbwm" path="res://player/player.tscn" id="2_tgfxf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xi8ll"]
+font_size = 24
+
+[node name="Test Player" type="Node2D"]
+
+[node name="WarriorBlue" type="Sprite2D" parent="."]
+position = Vector2(2042, 552)
+texture = ExtResource("1_wc0rv")
+
+[node name="Label" type="Label" parent="WarriorBlue"]
+offset_left = 604.0
+offset_top = -686.0
+offset_right = 644.0
+offset_bottom = -663.0
+text = "Idle"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="WarriorBlue"]
+offset_left = 604.0
+offset_top = -499.0
+offset_right = 644.0
+offset_bottom = -476.0
+text = "Run"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="WarriorBlue"]
+offset_left = 604.0
+offset_top = -311.0
+offset_right = 710.0
+offset_bottom = -288.0
+text = "Attack_side_A"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="WarriorBlue"]
+offset_left = 604.0
+offset_top = -106.0
+offset_right = 710.0
+offset_bottom = -83.0
+text = "Attack_side_B"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="WarriorBlue"]
+offset_left = 604.0
+offset_top = 80.0
+offset_right = 721.0
+offset_bottom = 103.0
+text = "Attack_down_A"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="WarriorBlue"]
+offset_left = 604.0
+offset_top = 277.0
+offset_right = 721.0
+offset_bottom = 300.0
+text = "Attack_down_B"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="WarriorBlue"]
+offset_left = 604.0
+offset_top = 475.0
+offset_right = 716.0
+offset_bottom = 498.0
+text = "Attack_up_A"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label8" type="Label" parent="WarriorBlue"]
+offset_left = 604.0
+offset_top = 668.0
+offset_right = 716.0
+offset_bottom = 691.0
+text = "Attack_up_B"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label9" type="Label" parent="WarriorBlue"]
+offset_left = -491.0
+offset_top = -781.0
+offset_right = 482.0
+offset_bottom = -747.0
+text = "0 1 2 3 4 5"
+label_settings = SubResource("LabelSettings_xi8ll")
+horizontal_alignment = 3
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label10" type="Label" parent="WarriorBlue"]
+offset_left = -576.0
+offset_top = -693.0
+offset_right = -562.0
+offset_bottom = 685.0
+text = "0 1 2 3 4 5 7 8"
+label_settings = SubResource("LabelSettings_xi8ll")
+horizontal_alignment = 3
+vertical_alignment = 3
+autowrap_mode = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_tgfxf")]
+position = Vector2(220, 215)
