@@ -7,7 +7,8 @@ var input_vector: Vector2 = Vector2(0,0)
 var is_running: bool = false
 var is_attacking: bool = false
 var was_running: bool = false
-var attack_cooldown:float = 0.0
+var attack_cooldown: float = 0.0
+var attack_combo: int = 0
 
 func _process(delta:float):
 	read_input()
@@ -36,7 +37,14 @@ func attack():
 		return
 		
 	# Tocar animação
-	animation_player.play('attack_side_A')
+	if attack_combo > 1:
+		attack_combo = 0
+	if attack_combo == 0:
+		animation_player.play('attack_side_A')
+	elif attack_combo == 1:
+		animation_player.play('attack_side_B')
+	
+	attack_combo += 1
 	attack_cooldown = 0.6
 	
 	# Marcar ataque
