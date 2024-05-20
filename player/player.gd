@@ -11,6 +11,8 @@ var attack_cooldown: float = 0.0
 var attack_combo: int = 0
 
 func _process(delta:float):
+	GameManager.player_position = position
+	
 	read_input()
 	# Temporizador do ataque
 	update_attack_cooldown(delta)
