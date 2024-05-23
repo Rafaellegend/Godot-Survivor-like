@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://gis5gdse0y5m"]
+[gd_scene load_steps=18 format=3 uid="uid://gis5gdse0y5m"]
 
 [ext_resource type="Texture2D" uid="uid://dhs06aak1vu73" path="res://addons/Tiny Swords/Terrain/Ground/Shadows.png" id="1_wy70k"]
 [ext_resource type="Texture2D" uid="uid://b8mv4undtj6ew" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="2_mc05h"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bfc02thxhhuoo" path="res://addons/Tiny Swords/Factions/Knights/Troops/Archer/Blue/Archer_Blue.png" id="12_b5uhx"]
 [ext_resource type="Texture2D" uid="uid://bnrdbibowt3hx" path="res://addons/Tiny Swords/Factions/Knights/Troops/Dead/Dead.png" id="13_5g2gk"]
 [ext_resource type="Texture2D" uid="uid://bb2jurrxy7kws" path="res://addons/Tiny Swords/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="14_87rga"]
+[ext_resource type="Texture2D" uid="uid://v4u5hcsh40xf" path="res://addons/Tiny Swords/Resources/Resources/G_Spawn.png" id="15_s3g4j"]
+[ext_resource type="Texture2D" uid="uid://blbnurni0bsw8" path="res://addons/Tiny Swords/Resources/Resources/M_Spawn.png" id="16_x6og1"]
+[ext_resource type="Texture2D" uid="uid://b4ujxx21af8f3" path="res://addons/Tiny Swords/Resources/Resources/W_Spawn.png" id="17_x4h6c"]
 
 [node name="Test Scene" type="Node2D"]
 
@@ -76,3 +79,15 @@ texture = ExtResource("13_5g2gk")
 [node name="PawnBlue" type="Sprite2D" parent="."]
 position = Vector2(3137, 1965)
 texture = ExtResource("14_87rga")
+
+[node name="GSpawn" type="Sprite2D" parent="."]
+position = Vector2(4548, 1655)
+texture = ExtResource("15_s3g4j")
+
+[node name="MSpawn" type="Sprite2D" parent="."]
+position = Vector2(4554, 1749)
+texture = ExtResource("16_x6og1")
+
+[node name="WSpawn" type="Sprite2D" parent="."]
+position = Vector2(4553, 1880)
+texture = ExtResource("17_x4h6c")

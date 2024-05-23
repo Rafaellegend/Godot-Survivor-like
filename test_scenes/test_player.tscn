@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bb0x36i4o1fh2"]
+[gd_scene load_steps=7 format=3 uid="uid://bb0x36i4o1fh2"]
 
 [ext_resource type="Texture2D" uid="uid://cq3f4pw4a4d0x" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_wc0rv"]
 [ext_resource type="PackedScene" uid="uid://d7uvuu1fhbwm" path="res://player/player.tscn" id="2_tgfxf"]
 [ext_resource type="PackedScene" uid="uid://bghfmbp34b53n" path="res://enemies/pawn.tscn" id="3_lwfs5"]
+[ext_resource type="PackedScene" uid="uid://de547iyxwq3e3" path="res://enemies/sheep.tscn" id="4_7wafs"]
+[ext_resource type="PackedScene" uid="uid://cm1u7yrjdrjd1" path="res://enemies/goblin.tscn" id="5_uqva7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xi8ll"]
 font_size = 24
@@ -102,13 +104,43 @@ uppercase = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_tgfxf")]
-position = Vector2(220, 215)
+position = Vector2(570, 346)
 
 [node name="Pawn" parent="." instance=ExtResource("3_lwfs5")]
-position = Vector2(578, 208)
+position = Vector2(766, -4)
+
+[node name="Sheep" parent="." instance=ExtResource("4_7wafs")]
+position = Vector2(1216, 524)
+
+[node name="Sheep2" parent="." instance=ExtResource("4_7wafs")]
+position = Vector2(1180, 705)
+
+[node name="Goblin" parent="." instance=ExtResource("5_uqva7")]
+position = Vector2(48, 731)
+
+[node name="Goblin2" parent="." instance=ExtResource("5_uqva7")]
+position = Vector2(200, 786)
+
+[node name="Goblin3" parent="." instance=ExtResource("5_uqva7")]
+position = Vector2(362, 778)
 
 [node name="Pawn2" parent="." instance=ExtResource("3_lwfs5")]
-position = Vector2(688, 353)
+position = Vector2(920, -26)
+
+[node name="Goblin4" parent="." instance=ExtResource("5_uqva7")]
+position = Vector2(-90, 624)
+
+[node name="Goblin5" parent="." instance=ExtResource("5_uqva7")]
+position = Vector2(-233, 522)
 
 [node name="Pawn3" parent="." instance=ExtResource("3_lwfs5")]
-position = Vector2(407, 389)
+position = Vector2(590, -56)
+
+[node name="Pawn4" parent="." instance=ExtResource("3_lwfs5")]
+position = Vector2(1154, -61)
+
+[node name="Sheep3" parent="." instance=ExtResource("4_7wafs")]
+position = Vector2(-116, -30)
+
+[node name="Sheep4" parent="." instance=ExtResource("4_7wafs")]
+position = Vector2(79, -78)
