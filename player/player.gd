@@ -5,11 +5,25 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sword_area: Area2D = $SwordArea
 @onready var hitbox_area: Area2D = $HitboxArea
+@onready var health_progress_bar:ProgressBar = $HealthProgressBar 
 
+@export_category("Flags")
+@export_enum("Neutral", "Passive", "Hostile") var behavior: int
+
+@export_category("Movement")
 @export var speed: float = 3
+
+@export_category("Sword")
 @export var sword_damage: float = 2
 @export var critical_multiplier: float = 1
 
+@export_category("Ritual")
+@export var ritual_damage: float = 1
+@export var ritual_interval: float = 30
+@export var ritual_scene:PackedScene
+@export_color_no_alpha var ritual_color: Color
+
+@export_category("Life")
 @export var health: float = 100
 @export var max_health: float = 100
 @export var death_prefab: PackedScene
@@ -22,10 +36,21 @@ var was_running: bool = false
 var attack_cooldown: float = 0.0
 var attack_combo: int = 0
 var hitbox_cooldown: float = 0.0
+var ritual_cooldown: float = 0
+
+var gold_pouch: int = 0
+
+signal meat_collected(value: int)
+signal gold_collected(value: int)
+signal health_state(actual: int, max:int)
+
+func _ready():
+	GameManager.player = self
 
 func _process(delta:float):
 	GameManager.player_position = position
-	
+	GameManager.ritual_color = ritual_color
+	GameManager.player_critical_multiplier = critical_multiplier
 	read_input()
 	# Temporizador do ataque
 	update_attack_cooldown(delta)
@@ -39,6 +64,12 @@ func _process(delta:float):
 		rotate_sprite()
 		
 	update_hitbox(delta)
+	
+	update_ritual(delta)
+	
+	# Atualizar Healt Bar
+	health_progress_bar.max_value = max_health
+	health_progress_bar.value = health
 	
 func _physics_process(delta: float):
 	# Modificar a velocidade
@@ -111,6 +142,16 @@ func update_attack_cooldown(delta: float):
 			is_running = false
 			animation_player.play("idle")
 
+func update_ritual(delta):
+	ritual_cooldown-=delta
+	if ritual_cooldown> 0: return
+	ritual_cooldown = ritual_interval
+	
+	var ritual = ritual_scene.instantiate()
+	ritual.damage_amount = ritual_damage
+	add_child(ritual)
+		
+	pass
 func deal_damage():
 	var bodies = sword_area.get_overlapping_bodies()
 	for body in bodies:
@@ -127,6 +168,7 @@ func deal_damage():
 				if randi_range(0,1) == 0:
 					enemy.damage(sword_damage)
 				else:
+					enemy.critical_damage = true
 					enemy.damage(sword_damage+(sword_damage * critical_multiplier))
 			print(dot_product)
 			
@@ -156,11 +198,14 @@ func damage(amount: float):
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.tween_property(self, "modulate", Color.WHITE, 0.3)
 	
+	health_state.emit(health,max_health)
 	# Processar dano
 	if health <= 0:
 		die()
 
 func die():
+	GameManager.end_game()
+	
 	if death_prefab:
 		var death_object = death_prefab.instantiate()
 		death_object.position = position

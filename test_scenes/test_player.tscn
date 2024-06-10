@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb0x36i4o1fh2"]
+[gd_scene load_steps=8 format=3 uid="uid://bb0x36i4o1fh2"]
 
 [ext_resource type="Texture2D" uid="uid://cq3f4pw4a4d0x" path="res://addons/Tiny Swords/Factions/Knights/Troops/Warrior/Blue/Warrior_Blue.png" id="1_wc0rv"]
 [ext_resource type="PackedScene" uid="uid://d7uvuu1fhbwm" path="res://player/player.tscn" id="2_tgfxf"]
 [ext_resource type="PackedScene" uid="uid://bghfmbp34b53n" path="res://enemies/pawn.tscn" id="3_lwfs5"]
 [ext_resource type="PackedScene" uid="uid://de547iyxwq3e3" path="res://enemies/sheep.tscn" id="4_7wafs"]
 [ext_resource type="PackedScene" uid="uid://cm1u7yrjdrjd1" path="res://enemies/goblin.tscn" id="5_uqva7"]
+[ext_resource type="PackedScene" uid="uid://wqp61iwk2qjh" path="res://misc/ritual.tscn" id="6_etciv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xi8ll"]
 font_size = 24
@@ -107,10 +108,10 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(570, 346)
 
 [node name="Pawn" parent="." instance=ExtResource("3_lwfs5")]
-position = Vector2(766, -4)
+position = Vector2(783, 139)
 
 [node name="Sheep" parent="." instance=ExtResource("4_7wafs")]
-position = Vector2(1216, 524)
+position = Vector2(866, 415)
 
 [node name="Sheep2" parent="." instance=ExtResource("4_7wafs")]
 position = Vector2(1180, 705)
@@ -122,7 +123,7 @@ position = Vector2(48, 731)
 position = Vector2(200, 786)
 
 [node name="Goblin3" parent="." instance=ExtResource("5_uqva7")]
-position = Vector2(362, 778)
+position = Vector2(186, 545)
 
 [node name="Pawn2" parent="." instance=ExtResource("3_lwfs5")]
 position = Vector2(920, -26)
@@ -144,3 +145,5 @@ position = Vector2(-116, -30)
 
 [node name="Sheep4" parent="." instance=ExtResource("4_7wafs")]
 position = Vector2(79, -78)
+
+[node name="Ritual" parent="." instance=ExtResource("6_etciv")]
