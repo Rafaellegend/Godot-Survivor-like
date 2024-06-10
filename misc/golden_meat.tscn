@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgpaspqnu601e"]
+
+[ext_resource type="PackedScene" uid="uid://d4fif10rtce87" path="res://misc/meat.tscn" id="1_4qjbe"]
+
+[node name="GoldenMeat" instance=ExtResource("1_4qjbe")]
+modulate = Color(1.51, 1.51, 0, 1)
+regen_amount = 20

@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://dg3kwctf1tu03"]
+
+[ext_resource type="PackedScene" uid="uid://d4fif10rtce87" path="res://misc/meat.tscn" id="1_lunae"]
+[ext_resource type="Texture2D" uid="uid://v4u5hcsh40xf" path="res://addons/Tiny Swords/Resources/Resources/G_Spawn.png" id="2_dtenj"]
+[ext_resource type="Script" path="res://gold_collect.gd" id="3_a3dh3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpgms"]
+atlas = ExtResource("2_dtenj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhvln"]
+atlas = ExtResource("2_dtenj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pypx"]
+atlas = ExtResource("2_dtenj")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip1kf"]
+atlas = ExtResource("2_dtenj")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k1k0"]
+atlas = ExtResource("2_dtenj")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6lej"]
+atlas = ExtResource("2_dtenj")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udgxh"]
+atlas = ExtResource("2_dtenj")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3nmum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpgms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhvln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pypx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip1kf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k1k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6lej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udgxh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GoldSack" instance=ExtResource("1_lunae")]
+sprite_frames = SubResource("SpriteFrames_3nmum")
+script = ExtResource("3_a3dh3")
+max_gold_amount = 5
+min_gold_amount = 20
