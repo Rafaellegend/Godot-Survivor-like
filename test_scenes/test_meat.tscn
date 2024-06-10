@@ -11,4 +11,3 @@ health = 1.0
 
 [node name="Meat" parent="." instance=ExtResource("2_0ap0m")]
 position = Vector2(799, 348)
-regen_amount = 10
