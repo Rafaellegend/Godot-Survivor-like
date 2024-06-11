@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d4fif10rtce87" path="res://misc/meat.tscn" id="1_lunae"]
 [ext_resource type="Texture2D" uid="uid://v4u5hcsh40xf" path="res://addons/Tiny Swords/Resources/Resources/G_Spawn.png" id="2_dtenj"]
-[ext_resource type="Script" path="res://gold_collect.gd" id="3_a3dh3"]
+[ext_resource type="Script" path="res://misc/gold_collect.gd" id="3_a3dh3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpgms"]
 atlas = ExtResource("2_dtenj")
