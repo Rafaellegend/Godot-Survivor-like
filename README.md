@@ -28,7 +28,7 @@ Esse é um projeto criado a partir das aulas do curso de Godot da [DIO](https://
 
 ## ▶ Demonstração
 
-- [Demonstração - itch.io](https://rafaellegend.itch.io)
+- [Demonstração - itch.io](https://rafaellegend.itch.io/knight-survivor)
 
 ## 👨‍💻 Autores
 
